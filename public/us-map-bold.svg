@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200px" height="800px" viewBox="0 0 1200 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Bold US map outline, matching goldentouchus.com style -->
+    <g stroke="#2B7A3E" stroke-width="8" fill="none" opacity="0.9">
+        <!-- Continental US - simple bold outline -->
+        <path d="M200,250 L300,180 L400,150 L500,130 L600,140 L700,150 L800,180 L850,230 L900,270 L950,320 L980,370 L1000,420 L970,460 L930,490 L870,520 L800,540 L730,550 L650,560 L550,550 L450,530 L350,480 L280,420 L240,370 L220,320 L200,250Z" />
+        
+        <!-- Major state boundaries - represented as simple lines -->
+        <path d="M200,250 L400,280" />
+        <path d="M400,280 L400,400" />
+        <path d="M400,400 L600,420" />
+        <path d="M600,420 L600,300" />
+        <path d="M600,300 L800,320" />
+        <path d="M800,320 L850,350" />
+        <path d="M400,240 L600,180" />
+        <path d="M600,180 L800,220" />
+        <path d="M500,130 L500,300" />
+        <path d="M700,150 L700,350" />
+        <path d="M900,270 L900,450" />
+        <path d="M300,350 L450,370" />
+        <path d="M450,370 L600,380" />
+        <path d="M600,380 L750,400" />
+    </g>
+    
+    <!-- Major highways -->
+    <g stroke="#2B7A3E" stroke-width="6" stroke-dasharray="20,12" opacity="0.8">
+        <!-- Interstate routes -->
+        <path d="M200,230 L400,180 L600,160 L800,200 L950,280" />
+        <path d="M300,300 L500,280 L700,290 L900,330" />
+        <path d="M350,400 L550,380 L750,410 L950,450" />
+        <path d="M400,500 L600,510 L800,490 L950,470" />
+    </g>
+    
+    <!-- Major cities - larger dots for emphasis -->
+    <g fill="#2B7A3E" opacity="0.8">
+        <circle cx="250" cy="230" r="12" />
+        <circle cx="220" cy="350" r="12" />
+        <circle cx="250" cy="420" r="12" />
+        <circle cx="450" cy="330" r="12" />
+        <circle cx="650" cy="280" r="12" />
+        <circle cx="550" cy="450" r="12" />
+        <circle cx="580" cy="220" r="12" />
+        <circle cx="900" cy="520" r="12" />
+        <circle cx="850" cy="280" r="12" />
+        <circle cx="750" cy="420" r="12" />
+    </g>
+</svg> 

@@ -1,103 +1,264 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { FaTruck, FaUsers, FaMapMarkedAlt, FaPhone } from 'react-icons/fa';
+
+const HomePage = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Hero Section */}
+      <section className="hero">
+        {/* Truck Image */}
+        <div className="absolute inset-0 z-0">
+          <div className="hero-overlay"></div>
+          <Image
+            src="/truck-hero.png"
+            alt="ShodExpress Truck on Highway"
+            fill
+            priority
+            className="object-cover"
+          />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="hero-content"
+          >
+            <h1 className="hero-title">
+              <span className="hero-highlight">Reliable</span> Transportation Services
+            </h1>
+            <p className="hero-description">
+              ShodExpress LLC provides cost-effective and reliable transportation solutions
+              for businesses across the United States.
+            </p>
+            <div className="hero-buttons">
+              <Link href="/services" className="btn btn-primary">
+                Our Services
+              </Link>
+              <Link href="/contact" className="btn btn-secondary">
+                Get a Quote
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="section section-light">
+        <div className="container">
+          <h2 className="section-title section-title-primary">Our Services</h2>
+          <p className="section-description">
+            We offer a comprehensive range of transportation solutions to meet your business needs,
+            with a focus on reliability, efficiency, and customer satisfaction.
+          </p>
+
+          <div className="grid grid-cols-3">
+            <ServiceCard
+              icon={<FaTruck size={36} />}
+              title="Freight Transportation"
+              description="Full-service freight transportation across all 48 contiguous states with flexible scheduling options."
+              isHighlighted={true}
+            />
+            <ServiceCard
+              icon={<FaMapMarkedAlt size={36} />}
+              title="Route Optimization"
+              description="Advanced route planning to minimize delivery times and maximize efficiency for your cargo."
+            />
+            <ServiceCard
+              icon={<FaUsers size={36} />}
+              title="Dedicated Team"
+              description="Professional drivers and logistics specialists committed to the safe delivery of your goods."
+              isHighlighted={true}
+            />
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <Link href="/services" className="btn btn-primary">
+              View All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="section section-white">
+        <div className="container">
+          <div className="grid grid-cols-2" style={{ alignItems: 'center', gap: '3rem' }}>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div style={{ position: 'relative', height: '400px', width: '100%', borderRadius: '0.5rem', overflow: 'hidden' }}>
+                <Image
+                  src="/images/team.jpg"
+                  alt="ShodExpress Team"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="section-title section-title-primary" style={{ textAlign: 'left' }}>Our Story</h2>
+              <p style={{ color: 'var(--gray-700)', marginBottom: '1rem' }}>
+                Founded in 2023, SHOD EXPRESS LLC was established by a group of trucking industry
+                veterans who saw an opportunity to provide a higher level of service to clients.
+                Starting with just three trucks and a commitment to excellence, we've grown to become
+                a trusted name in the transportation industry.
+              </p>
+              <p style={{ color: 'var(--gray-700)', marginBottom: '1.5rem' }}>
+                Our team is made up of experienced drivers, logistics experts, and customer service
+                professionals who are dedicated to providing the best possible service to our clients.
+              </p>
+              <Link href="/about" className="btn btn-primary">
+                Learn More About Us
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="section section-primary">
+        <div className="container" style={{ textAlign: 'center' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="section-title section-title-white">Ready to Work With Us?</h2>
+            <p style={{ fontSize: '1.25rem', marginBottom: '2rem', maxWidth: '36rem', margin: '0 auto 2rem' }}>
+              Contact us today to learn more about our services and how we can help your business.
+            </p>
+            <div className="hero-buttons" style={{ justifyContent: 'center' }}>
+              <Link href="/contact" className="btn btn-secondary">
+                Contact Us
+              </Link>
+              <a
+                href="https://intelliapp.driverapponline.com/c/shodexpressllc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+                style={{ backgroundColor: 'transparent', border: '2px solid white' }}
+              >
+                Apply to Drive
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section section-light">
+        <div className="container">
+          <h2 className="section-title section-title-primary">What Our Clients Say</h2>
+          <div className="grid grid-cols-3" style={{ marginTop: '3rem' }}>
+            <TestimonialCard
+              quote="ShodExpress has been a reliable partner for our business for the past year. Their drivers are professional and always on time."
+              author="John Smith"
+              position="Logistics Manager, ABC Company"
+            />
+            <TestimonialCard
+              quote="We've been working with ShodExpress for our shipping needs and they've consistently delivered excellent service."
+              author="Sarah Johnson"
+              position="Operations Director, XYZ Corp"
+              isHighlighted={true}
+            />
+            <TestimonialCard
+              quote="Their team goes above and beyond to ensure our cargo arrives safely and on schedule. Highly recommended!"
+              author="Michael Brown"
+              position="Supply Chain Manager, 123 Industries"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Quick Section */}
+      <section className="section section-primary" style={{ padding: '4rem 0' }}>
+        <div className="container">
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div>
+              <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '0.5rem' }}>Ready to get started?</h2>
+              <p style={{ color: 'var(--gray-200)' }}>
+                Contact us now for a free quote on your transportation needs.
+              </p>
+            </div>
+            <div style={{ marginTop: '1.5rem' }}>
+              <a
+                href="tel:+15134400406"
+                className="btn btn-secondary"
+                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
+              >
+                <FaPhone /> +1 (513) 440-0406
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
+};
+
+// Card components
+interface ServiceCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  isHighlighted?: boolean;
 }
+
+const ServiceCard = ({ icon, title, description, isHighlighted = false }: ServiceCardProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className={`card ${isHighlighted ? 'card-highlight' : ''}`}
+    >
+      <div className="card-icon">{icon}</div>
+      <h3 className="card-title">{title}</h3>
+      <p className="card-description">{description}</p>
+    </motion.div>
+  );
+};
+
+interface TestimonialCardProps {
+  quote: string;
+  author: string;
+  position: string;
+  isHighlighted?: boolean;
+}
+
+const TestimonialCard = ({ quote, author, position, isHighlighted = false }: TestimonialCardProps) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className={`testimonial ${isHighlighted ? 'testimonial-highlight' : ''}`}
+    >
+      <p className="testimonial-quote">"{quote}"</p>
+      <div>
+        <p className="testimonial-author">{author}</p>
+        <p className="testimonial-position">{position}</p>
+      </div>
+    </motion.div>
+  );
+};
+
+export default HomePage; 

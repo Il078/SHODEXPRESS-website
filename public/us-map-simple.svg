@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200px" height="800px" viewBox="0 0 1200 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <!-- Simple US map outline -->
+    <g stroke="#2B7A3E" stroke-width="4" fill="none">
+        <!-- Main US continental outline - simplified -->
+        <path d="M200,250 L300,180 L400,150 L500,130 L600,140 L700,150 L800,180 L850,230 L900,270 L950,320 L980,370 L1000,420 L970,460 L930,490 L870,520 L800,540 L730,550 L650,560 L550,550 L450,530 L350,480 L280,420 L240,370 L220,320 L200,250Z" 
+              fill="#2B7A3E" fill-opacity="0.15" />
+
+        <!-- Alaska - simplified -->
+        <path d="M150,350 L180,330 L210,320 L240,330 L260,350 L240,380 L210,400 L180,390 L160,370 L150,350Z" 
+              fill="#2B7A3E" fill-opacity="0.15" />
+
+        <!-- Hawaii - simplified -->
+        <path d="M250,450 L270,440 L290,450 L280,470 L260,470 L250,450Z" 
+              fill="#2B7A3E" fill-opacity="0.15" />
+    </g>
+
+    <!-- Major interstate highways -->
+    <g stroke="#2B7A3E" stroke-width="5" stroke-dasharray="15,10">
+        <!-- I-90/I-94 (Northern route) -->
+        <path d="M200,230 L400,180 L600,160 L800,200 L950,280" />
+        
+        <!-- I-80 (Central Northern route) -->
+        <path d="M300,300 L500,280 L700,290 L900,330" />
+        
+        <!-- I-40 (Central Southern route) -->
+        <path d="M350,400 L550,380 L750,410 L950,450" />
+        
+        <!-- I-10 (Southern route) -->
+        <path d="M400,500 L600,510 L800,490 L950,470" />
+        
+        <!-- I-95 (Eastern Seaboard) -->
+        <path d="M800,200 L780,250 L800,300 L840,350 L870,400 L900,450 L910,500" />
+        
+        <!-- I-5 (Western Seaboard) -->
+        <path d="M250,230 L230,300 L220,370 L240,430 L270,480" />
+    </g>
+    
+    <!-- Major cities as dots -->
+    <g fill="#2B7A3E">
+        <!-- Seattle -->
+        <circle cx="250" cy="230" r="10" />
+        
+        <!-- San Francisco -->
+        <circle cx="220" cy="350" r="10" />
+        
+        <!-- Los Angeles -->
+        <circle cx="250" cy="420" r="10" />
+        
+        <!-- Denver -->
+        <circle cx="450" cy="330" r="10" />
+        
+        <!-- Chicago -->
+        <circle cx="650" cy="280" r="10" />
+        
+        <!-- Dallas -->
+        <circle cx="550" cy="450" r="10" />
+        
+        <!-- Minneapolis -->
+        <circle cx="580" cy="220" r="10" />
+        
+        <!-- Miami -->
+        <circle cx="900" cy="520" r="10" />
+        
+        <!-- New York -->
+        <circle cx="850" cy="280" r="10" />
+        
+        <!-- Atlanta -->
+        <circle cx="750" cy="420" r="10" />
+    </g>
+</svg> 
